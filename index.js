@@ -30,7 +30,15 @@ server.get('/', (req, res) => {
 server.post('/callback', (req, res) => {
     res.sendStatus(200);
 
-    const message = req.body.content.text;
+const q_str = "問合せ";
+
+if(q_str.test(req.body.content.text)){
+	const message = req.body.content.text;
+}else{
+	const message = "なーにー？"
+}
+
+//    const message = req.body.content.text;
     const roomId = req.body.source.roomId;
     const accountId = req.body.source.accountId;
 

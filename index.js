@@ -34,6 +34,12 @@ const q_str = /問合せ/;
 
 console.log("問合せかどうかは" + q_str.test(req.body.content.text));
 
+if (q_str.test(req.body.content.text)) {
+	console.log("問合せだ！");
+} else {
+	console.log("問合せじゃない！");
+}
+
     const message = req.body.content.text;
     const roomId = req.body.source.roomId;
     const accountId = req.body.source.accountId;

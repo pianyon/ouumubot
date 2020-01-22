@@ -32,11 +32,7 @@ server.post('/callback', (req, res) => {
 
 const q_str = /問合せ/;
 
-//if(q_str.test(req.body.content.text)){
-//	const message = "なーにー？？？";
-//}else{
-//	const message = req.body.content.text;
-//}
+console.log("問合せかどうかは" + q_str.test(req.body.content.text));
 
     const message = req.body.content.text;
     const roomId = req.body.source.roomId;

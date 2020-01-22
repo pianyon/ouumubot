@@ -33,9 +33,9 @@ server.post('/callback', (req, res) => {
 const q_str = /問合せ/;
 
 if(q_str.test(req.body.content.text)){
-	const message = req.body.content.text;
+	const message = "なーにー？？？";
 }else{
-	const message = "なーにー？";
+	const message = req.body.content.text;
 }
 
 //    const message = req.body.content.text;

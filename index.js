@@ -36,10 +36,10 @@ server.post('/callback', (req, res) => {
 
     if (q_str.test(req.body.content.text)) {
         console.log("問合せだ！");
-        const message = req.body.content.text;
+        var message = req.body.content.text;
     } else {
         console.log("問合せじゃない！");
-        const message = req.body.content.text;
+        var message = req.body.content.text;
     }
 
 //    const message = req.body.content.text;

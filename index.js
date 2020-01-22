@@ -30,17 +30,19 @@ server.get('/', (req, res) => {
 server.post('/callback', (req, res) => {
     res.sendStatus(200);
 
-const q_str = /問合せ/;
+    const q_str = /問合せ/;
 
-console.log("問合せかどうかは" + q_str.test(req.body.content.text));
+    console.log("問合せかどうかは" + q_str.test(req.body.content.text));
 
-if (q_str.test(req.body.content.text)) {
-	console.log("問合せだ！");
-} else {
-	console.log("問合せじゃない！");
-}
+    if (q_str.test(req.body.content.text)) {
+        console.log("問合せだ！");
+        const message = req.body.content.text;
+    } else {
+        console.log("問合せじゃない！");
+        const message = req.body.content.text;
+    }
 
-    const message = req.body.content.text;
+//    const message = req.body.content.text;
     const roomId = req.body.source.roomId;
     const accountId = req.body.source.accountId;
 

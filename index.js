@@ -36,7 +36,7 @@ server.post('/callback', (req, res) => {
 
     if (q_str.test(req.body.content.text)) {
         console.log("問合せだ！");
-        var message = "なーにー？どうした？";
+        var message = "なになに？どうした？";
     } else {
         console.log("問合せじゃない！");
         var message = req.body.content.text;
